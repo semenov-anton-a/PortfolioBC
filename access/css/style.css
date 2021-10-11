@@ -1,0 +1,77 @@
+
+* {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/** Container for all pages */
+body{
+    width: 50%;
+    margin: auto;
+    display: flex;
+    height: 100%;
+    /* background-color: #FBDFD1; */
+}
+
+/** Container */
+div#container{
+    width: 100%;
+    margin-top: 1rem;   
+}
+
+/** HEADER & FOOTER */
+header, footer{
+    border-radius: 2rem 2rem 0rem 0rem;
+    display: flex;
+    background-color: #690138;
+    padding: 1rem 3rem;
+}
+
+header div:nth-child(1){ flex-grow: 1; }
+header img{max-width: 10rem;}
+header div > *{ 
+    font-size: 24px;
+    color:#FBDFD1; 
+}
+
+article{
+    flex-wrap: wrap;
+    border: 1px solid gray;
+}
+article > h1{ margin: 1rem 3rem; }
+article > h2{ margin: 1rem 5rem ; }
+article > ol{ margin: 1rem 7rem ; }
+article div#images{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+    margin: auto 0 ;
+}
+article figure {
+    margin: auto 1px;
+}
+article figure img{
+    max-height: 100px;
+    max-width: 10rem;
+}
+
+
+/** link Hover */
+ol > li:hover{ font-size: 18px; margin-top: -2px; }
+article div.content{ padding: 0.5rem 1rem; }
+
+footer{ border-radius: 0rem 0rem 2rem 2rem;}
+footer div > *{
+    font-size:14px; 
+    color:#FBDFD1; 
+}
+footer a{
+    font-size:14px; 
+    color:#FBDFD1; 
+}
+
+/** Mobile Media **/
+/* @import url("media.css"); */
+/* @import url("/access/css/media.css"); */

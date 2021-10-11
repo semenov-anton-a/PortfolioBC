@@ -1,0 +1,73 @@
+/** MINI Mobile **/
+@media screen and (min-width: 320px) and (max-width: 576px) {
+    header > div * { font-size:12px }
+    header {
+        flex-direction: column-reverse;
+        padding: 1rem 1rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    header div:nth-child(1){  margin-top: 0.5rem; }
+    header img{ max-width: 8rem; }
+    header h6.viewType::after{
+        color : blue;
+        content : "Small Mobile";
+    }
+
+    article > h1{ margin: 1rem 1rem; font-size:16px; text-align: center}
+    article > h2{ margin: 1rem 2rem; font-size:16px; text-align: center}
+    article > ol{ margin: 1rem 3rem; }
+    footer div > *{ font-size:12px; }
+}
+
+
+/** Mobile **/
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    header > div * { font-size:18px}
+    header {
+        flex-direction: column-reverse;
+        padding: 1rem 1rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+    header div:nth-child(1){  margin-top: 1rem; }
+    header h6.viewType::after{
+        color : yellow;
+        content : "Mobile";
+    }
+    article > h1{ margin: 1rem 1rem; font-size:18px; text-align: center}
+    article > h2{ margin: 1rem 2rem; font-size:18px; text-align: center}
+    article > ol{ margin: 1rem 3rem; }
+    footer div > *{ font-size:12px;}
+    /* footer div > *{ font-size:12px; } */
+}
+
+/** Tablet **/
+@media screen and (min-width: 767px) and (max-width: 968px) {
+    /* header > div * { font-size:18px } */
+    header {
+        flex-direction: column-reverse;
+        padding: 1rem 1rem;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    header div:nth-child(1){  margin-top: 0.5rem; }
+    /* header img{ max-width: 8rem; }    */
+    header h6.viewType > span::after{
+        color : green;
+        content : "Tablet";
+    }
+
+    article > h2{ margin: 1rem 2rem; font-size:20px;}
+    article > h1{ margin: 1rem 1rem; font-size:20px;}
+    article > ol{ margin: 1rem 5rem; }
+    footer div > *{ font-size:12px;}
+}
+@media screen and (min-width: 967px) {
+    header h6.viewType > span::after{
+        color : red;
+        content : "Tietokone";
+    }
+}
