@@ -1,0 +1,48 @@
+body{ 
+    background-color: lightgray;
+    width: 420px;
+    border: 1px solid black;
+    padding: 0 auto;
+}
+img { max-width: 120px; }
+
+.container{
+    margin: 10px 20px;
+    padding-bottom: 10px;
+    display: grid;
+    /* grid-template-columns: 98opx 162px; */
+    /* grid-template-rows: auto; */
+    grid-template-areas: "kuva otsikko" "kuva text";
+    box-sizing: border-box;
+    width: 400px;
+}
+
+.image{ 
+    grid-area: kuva;
+    grid-row: 1 / span 2;
+    margin-right:20px;
+}
+.image figure {
+    padding: 5px;
+    margin: 0;
+    border: 1px solid white;
+    background-color:white;
+}
+
+.heading{
+    grid-area: otsikko;
+    margin-bottom: 10px;
+    font-size: 150%;
+    letter-spacing: 1px;
+}
+
+.text{
+    grid-area: text;
+    font-size: 85%;
+    line-height: 1.5rem;
+
+}
+
+.reverse{
+    grid-template-areas: "otsikko kuva" "text kuva";
+}
