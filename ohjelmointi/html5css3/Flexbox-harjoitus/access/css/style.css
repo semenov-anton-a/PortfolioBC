@@ -1,0 +1,36 @@
+body{
+    background-color: darkcyan;
+    padding: 10px;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+.wrapper > * {
+    padding: 10px;
+    flex-grow: 1;
+    flex-basis: 100%;
+}
+.header{ background-color:gold; }
+.main{ 
+    background-color: darkorange; 
+    padding: 0;
+}
+.main > p,h1 {padding: 10px;}
+.main i {font-size: 32px;}
+
+.main .social-icons{
+    display: flex;
+}
+.main .social-icons > i{
+    color: white;
+    flex-basis: 100%;
+    padding: 10px;
+    text-align: center;
+    background-color:red;
+}
+
+.aside-1{ background-color:mediumseagreen; }
+.aside-2{background-color:seagreen; }
+.footer{ background-color:lightgreen;}
