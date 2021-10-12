@@ -1,0 +1,58 @@
+#container{width: 100%; margin: 0 auto;}
+#anim-container{
+    position: relative;
+    margin-top: 100px;
+    padding: 20px;
+    width:500px;
+    height: 200px;
+    border: 10px solid darkgoldenrod;
+    text-align: center;
+    font-size: 20px;
+}
+#anim-container p {margin-top: 20px;letter-spacing: 10px}
+#anim-container p>span:nth-child(1) {color: blue;}
+#anim-container p>span:nth-child(2) {
+    color: white;
+    background-color:darkmagenta;
+    padding: 2px 20px;
+}
+
+#anim{
+    position: absolute;
+    height: 150px;
+    width: 370px;
+    left: 25%;
+    top:-50%;
+    background-color:aqua;
+    z-index: -1;
+    animation-name: slidetop;
+    animation-duration: 3s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+}
+@keyframes slidetop {
+    from { top:-50%; }
+    to { top: -4%;}
+}
+
+#anim2{
+    position: absolute;
+    height: 160px;
+    width: 140px;
+    left: -30%;
+    top: 10%;
+    background-color:khaki;
+    z-index: -1;
+    opacity: 0.5;
+    animation-name: slideright;
+    animation-duration: 3s;
+    animation-delay: 1.5s;
+    animation-fill-mode: forwards;   
+}
+
+@keyframes slideright {
+    from { left:-50%;}
+    to { left: 50%; }
+}
+
+

@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Varela Round', sans-serif;
+}
+
+a{ color:#2690aa }
+body { 
+    width: 70%; 
+    margin: auto; }
+
+/* SPECIAL */
+
+div#special {
+    color: white;
+    background-color: #698086; }
+div#special h1 {
+    padding: 0.3rem;
+    background-color: #698086;
+    color: #fff;
+    font-size: 22px;
+    display: flex;
+    align-items: center; }
+div#special h1 > span {
+    font-size: 14px;
+    margin-left: 0.2rem; }
+div#special div#triangle-sprite {
+    height: 0.3rem;
+    background-image: url('../imgs/special-bg.png'); }
+
+/* WRAPPER */
+div#wrapper {  background-image: url('../imgs/grunge.png'); }
+
+/* HEADER */
+header { margin: 1rem 0 0 0; }
+
+header hr {    
+    width: 95%;
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em auto;
+    padding: 0;
+}
+
+/* Nav */
+nav {
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    padding: 0rem 1rem;
+}
+
+nav > div {
+    padding: 0 5rem 0 0;
+}
+nav > div img { max-width: 5rem; }
+
+/* NAVLINKs Actions */
+nav a { color: gray; text-decoration: none;}
+nav a:hover { color:black; }
+
+/* NAV List */
+nav ul {}
+nav ul li {
+    font-weight: 900;
+    font-size: 18px;
+    display: inline-block;
+    list-style: none;
+    margin-left: 5rem;
+}
+
+nav ul li span {
+    color: gray;
+    display: block;
+    font-size: 12px;
+}
+
+/* MIAIN CONTENT */
+section#main { display: flex; }
+section#main article{ width:60%; padding: 0 1rem; }
+section#main article p:first-child { font-weight: 900; }
+section#main article p { font-size: 14px; margin-bottom: 1rem; }
+section#main article img{ max-width: 100%; }
+
+/* RIGHT SIDE CONTENT */
+aside#sidebar { width: 40%; padding: 0 1rem; }
+aside#sidebar div.calloud h3 {    letter-spacing: 2px; }
+aside#sidebar div.calloud {
+    background-color: #f6e9c9;
+    border-radius: 0.5rem;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    font-size: 12px;
+    margin-bottom: 1rem;
+}
+
+aside#sidebar div.sidelist { border-bottom: 0.1rem solid #ccc; padding: 0.5rem 0 2rem 0; }
+aside#sidebar div.sidelist ul { list-style: none; column-count: 2; }
+aside#sidebar div:last-child{ margin-top: 1rem; }
+
+
+/** FOOTER */
+footer{
+    color:gray;
+    margin-top:3rem;
+    text-align:center;
+}
