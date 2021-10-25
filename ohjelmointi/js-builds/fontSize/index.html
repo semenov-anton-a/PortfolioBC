@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Grenze:wght@100&family=Mansalva&family=Roboto+Slab&family=Turret+Road:wght@200&display=swap" rel="stylesheet">
+    <title>Font Size</title>
+</head>
+
+<body>
+    <style>
+        button {
+            background-color: blue;
+            border: none;
+            color: white;
+            padding: 15px;
+            border-radius: 30px;
+            box-shadow: 1px 0px gray;
+        }
+
+        button:disabled {
+            background-color: blueviolet;
+            cursor: not-allowed;
+        }
+    </style>
+
+    <!-- FONT SIZE -->
+    <div id="container fontSize">
+        <h1>Default Font Size 10px</h1>
+        <div id="pFonts">
+            <p data-fsize="20">First font size </p>
+            <p data-fsize="24">Second font size </p>
+            <p data-fsize="28">Third font size </p>
+            <p data-fsize="32">Fourth font size </p>
+            <p data-fsize="16">Fiveth font size </p>
+        </div>
+        <button onClick="changeFontSize()" type="button">Change Font Size</button>
+    </div>
+
+    <!-- FONT STYLE -->
+    <div id="container fontStyle">
+        <h1>Default Font Style</h1>
+        <div id="pStyles">
+            <p data-fstyle="Roboto">First font style</p>
+            <p data-fstyle="Mansalva">Second font style</p>
+            <p data-fstyle="Grenze">Third font style</p>
+            <p data-fstyle="Turret Road">Fourth font style</p>
+            <p data-fstyle="Courier New">Fiveth font style</p>
+        </div>
+        <button onClick="changeFontStyle()" type="button">Change Font Style</button>
+    </div>
+
+    <script src="js/js.js"></script>
+</body>
+
+</html>
