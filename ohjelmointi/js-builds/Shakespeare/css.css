@@ -1,0 +1,15 @@
+/* table, td, th,tr { border: 1px solid black; }
+td, th, tr { padding: 5px 15px;} */
+
+html{font-size: 62.5%;}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.6em;
+    padding: 1rem;
+}
+
+ul{
+    list-style: disc;
+    padding: 1rem 1rem 1rem 4rem;
+    list-style: 1.5;
+}
