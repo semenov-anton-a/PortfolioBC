@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        #container {
+            display: flex;
+            flex-direction: column;
+            width: 300px;
+        }
+
+        input {
+            width: 300px
+        }
+
+        #container label {
+            margin-bottom: 20px;
+        }
+    </style>
+
+    <h1>Person:&nbsp;<span></span></h1>
+    <h2>Prorams:&nbsp;<span></span></h2>
+
+    <div id="container">
+        <label>Name:
+            <input type="text" name="name">
+        </label>
+        <label>Age:
+            <input type="text" name="age">
+        </label>
+        <label>Pragram language: <small>write with "," delimtr</small>
+            <input type="text" name="programs">
+        </label>
+        <button type="button" id="btn">Insert</button>
+    </div>
+
+
+    <script type="text/javascript">
+        let elemH1 = document.querySelector('h1');
+        let elemH2 = document.querySelector('h2');
+        
+        const appendPersonData = (data) => {
+            elemH1.children[0].textContent = data.name + ", age: " +data.age
+            elemH2.children[0].textContent = data.programing;    
+
+            console.log(data)
+        };  
+                
+        let person = {
+            name: 'Anton',
+            age: 35,
+            gender: 'male',
+            programing: ['php', 'sql', 'javascript'],
+            getData: function () {},
+            setData: function () {
+                appendPersonData( this );
+            }
+        }
+        
+
+        let buttonInset = {
+            elem : document.getElementById("btn"),
+            click : function(){
+                return this.elem.addEventListener("click", function(){
+                    let name = document.querySelector( "input[name=name]" ).value;
+                    let age = document.querySelector( "input[name=age]" ).value;
+                    let programs = document.querySelector( "input[name=programs]" ).value;
+
+                    person.name = name
+                    person.age = age
+                    person.programing = programs.split(",");
+                    
+                    appendPersonData( person );
+                });
+            }
+        }
+
+        buttonInset.click()
+        person.setData()
+
+    </script>
+</body>
+
+</html>
