@@ -1,0 +1,23 @@
+#container{ 
+    width: 70%;
+    min-height:500px; 
+    margin: 0 auto;
+    padding: 30px; 
+    text-align: center;
+    background-color:yellow;
+}
+
+figure#logo img{
+    max-width: 200px;
+    /* background-color: red;; */
+}
+
+div#content{
+    text-align: left;
+}
+
+div#username{ display: none; }
+
+button{
+    margin: 10px;
+}
