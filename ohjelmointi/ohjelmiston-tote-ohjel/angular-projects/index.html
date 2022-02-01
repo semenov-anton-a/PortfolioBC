@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Fons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" type="text/css" rel="stylesheet">
+
+    <!-- Style -->
+    <link rel="stylesheet" type="text/css" href="/access/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/access/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/access/css/media.css">
+    <title>Portfolio | Anton Semenov</title>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <div>
+                <h1>Anton Semenov</h1>
+                <h2>Java21s</h2>
+                <h2>s2101154</h2>
+                <h3>Portfolio</h3>
+                <h6 class="viewType">View Type:&nbsp;<span></span></h6>
+            </div>
+            <div>
+                <figure>
+                    <img src="access/img/bc.png" />
+                </figure>
+            </div>
+        </header>
+
+        <article>
+            <h1>Angular Projects</h2>
+                <ol id="listProjects">
+
+                </ol>
+        </article>
+        <footer>
+            <div>
+                <span>Anton Semenov</span>
+            </div>
+        </footer>
+    </div>
+
+</body>
+<script type="text/javascript">
+    function objLength(obj) {
+        var i = 0;
+        for (var x in obj) {
+            if (obj.hasOwnProperty(x)) {
+                i++;
+            }
+        }
+        return i;
+    }
+
+    // Get JSON FILE    
+    function readTextFile(file, callback) {
+        var rawFile = new XMLHttpRequest();
+        rawFile.overrideMimeType("application/json");
+        rawFile.open("GET", file, true);
+        rawFile.onreadystatechange = function () {
+            if (rawFile.readyState === 4 && rawFile.status == "200") { callback(rawFile.responseText); }
+        }
+        rawFile.send(null);
+    }
+
+    // JSON FILE
+    const jsonFoldersURL = "/ohjelmointi/ohjelmiston-tote-ohjel/angular-projects/folders.json";
+    
+    const makeOlList = {
+        path : "/ohjelmointi/ohjelmiston-tote-ohjel/angular-projects/",
+        container : document.querySelector("ol#listProjects"),
+        generateList : function( data ){
+            let aLink = document.createElement("a");
+            let list = document.createElement("li");
+
+            aLink.setAttribute("href", this.path + data + '/dist/' + data );
+            aLink.innerHTML = data;
+            list.append(aLink);
+            this.container.append(list);
+        },
+
+        init : function( data ){
+            let dataLength = objLength(data);
+            for( var i=0; i < dataLength; i++) {
+                this.generateList( data[i] );
+            }
+        },
+    };
+
+
+    // Call JSON
+    readTextFile(jsonFoldersURL, function (textJson) {
+        let json = JSON.parse(textJson);
+        makeOlList.init( json );
+        // console.log( objLength(jsonParse) );
+    });
+</script>
+
+</html>

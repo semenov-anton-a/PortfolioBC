@@ -59,7 +59,8 @@ article figure img{
 
 
 /** link Hover */
-ol > li:hover{ font-size: 18px; margin-top: -2px; }
+/* ol > li:hover{ font-size: 16px; margin-top: -2px; } */
+ol>li{margin-top:5px}
 article div.content{ padding: 0.5rem 1rem; }
 
 footer{ border-radius: 0rem 0rem 2rem 2rem;}
