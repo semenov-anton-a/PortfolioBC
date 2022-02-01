@@ -1,0 +1,15 @@
+button {
+    margin-left: 5px;
+}
+
+p {
+    border-top: 0.1px solid black;
+}
+
+span.ok {
+    color: green;
+}
+
+span.fail {
+    color: red;
+}
