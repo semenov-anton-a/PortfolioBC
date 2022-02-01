@@ -1,0 +1,6 @@
+<label>Your name : <small>Min 5, Max 10 characters</small></label><br/>
+<!-- <input type="text" (input) = "onInput($event)"/> -->
+<input type="text" [(ngModel)] = "userName"/>
+<button type="button" [disabled]="! checkUserNameLength(userName)" (click)="onResetButtonClick()">Reset</button>
+<p>{{userName}}</p>
+<span class="{{validStatus ?'ok':'fail'}}">Validdation {{validStatusText}}. length {{userName.length}}</span>
