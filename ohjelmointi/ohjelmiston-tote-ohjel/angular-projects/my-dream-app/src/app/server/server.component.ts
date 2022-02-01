@@ -1,3 +1,4 @@
+import { typeWithParameters } from '@angular/compiler/src/render3/util';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -10,6 +11,11 @@ import { Component, OnInit } from '@angular/core';
 export class ServerComponent implements OnInit {
 
     serverStatus:string = 'offline';
+
+
+    getServerStatus() {
+        return this.serverStatus;
+    }
 
     // Random Show SERVER ID
     serverID = Math.floor(Math.random() * (10 - 1 + 1) + 0);
