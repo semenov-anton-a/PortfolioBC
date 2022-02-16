@@ -43,7 +43,7 @@ const MyGenerator = {
                     {
                         let indexHTML = projectName + "/dist/" + projectName + "/index.html";
                         
-                        let path = this.baseUrlForProject + projectName + '/dist' + projectName;
+                        let path = this.baseUrlForProject + projectName + '/dist/' + projectName;
                         let replace = '<base href="'+path+'">';                       
                         
                         
