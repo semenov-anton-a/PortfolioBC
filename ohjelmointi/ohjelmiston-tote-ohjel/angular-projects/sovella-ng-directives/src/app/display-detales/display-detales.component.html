@@ -1,0 +1,37 @@
+<div class="container text-center">
+    <h2 class="mb-5">Display Ditales</h2>
+
+    <div class="row justify-content-center">
+        <button 
+            (click)="toPressAButton()" 
+            [ngClass]="{
+                'btn-primary': buttonPressVCount != maxCount, 
+                'btn-danger' : buttonPressVCount == maxCount 
+            }"
+            class="btn col-2"
+            type="button">PRESS Count {{buttonPressVCount}}
+        </button>
+        <button 
+            [ngClass]="{'invisible' : buttonPressVCount != maxCount }"
+            class="btn-primary btn col-12 mt-2"
+            (click)="pressGameReset()"
+        >RESET</button>
+    </div>
+
+    <div class="mt-5 row justify-content-center">
+        <p 
+            *ngIf="toToggleText();"
+            class="col-4 p-2" 
+            style="background-color:gray; border-radius:5px">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ad expedita cupiditate similique temporibus minus
+            dignissimos soluta, ipsa voluptate dolorum quis.
+        </p>
+        <ul>
+            <li 
+                *ngFor="let num of [].constructor(buttonPressVCount) ; let i = index"
+                [ngClass]="{'blackBG': i === (maxCount-1) }"
+            >{{i+1}}</li>
+        </ul>
+    </div>
+
+</div>
