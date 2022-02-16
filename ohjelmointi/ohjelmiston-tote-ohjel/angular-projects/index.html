@@ -72,10 +72,11 @@
     }
 
     // JSON FILE
-    const jsonFoldersURL = "/ohjelmointi/ohjelmiston-tote-ohjel/angular-projects/folders.json";
+    const jsonFoldersURL = "folders.json";
     
     const makeOlList = {
         path : "/ohjelmointi/ohjelmiston-tote-ohjel/angular-projects/",
+        path : "",
         container : document.querySelector("ol#listProjects"),
         generateList : function( data ){
             let aLink = document.createElement("a");
