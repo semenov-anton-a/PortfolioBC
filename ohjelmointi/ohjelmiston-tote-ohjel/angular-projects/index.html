@@ -12,9 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital@1&display=swap" type="text/css" rel="stylesheet">
 
     <!-- Style -->
-    <link rel="stylesheet" href="../../access/css/reset.css">
-    <link rel="stylesheet" href="../../access/css/style.css">
-    <link rel="stylesheet" href="../../access/css/media.css">
+    <link rel="stylesheet" href="../../../access/css/reset.css">
+    <link rel="stylesheet" href="../../../access/css/style.css">
+    <link rel="stylesheet" href="../../../access/css/media.css">
     <title>Portfolio | Anton Semenov</title>
 </head>
 
@@ -72,10 +72,11 @@
     }
 
     // JSON FILE
-    const jsonFoldersURL = "/ohjelmointi/ohjelmiston-tote-ohjel/angular-projects/folders.json";
+    const jsonFoldersURL = "folders.json";
     
     const makeOlList = {
         path : "/ohjelmointi/ohjelmiston-tote-ohjel/angular-projects/",
+        path : "",
         container : document.querySelector("ol#listProjects"),
         generateList : function( data ){
             let aLink = document.createElement("a");
