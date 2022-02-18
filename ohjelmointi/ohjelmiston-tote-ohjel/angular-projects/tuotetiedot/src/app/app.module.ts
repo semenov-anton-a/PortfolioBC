@@ -3,15 +3,18 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { GoodsListComponent } from './components/goods-list/goods-list.component';
-import { AppRoutingModule } from './app-routing.module';
+import { 
+    GoodsListComponent,  
+} from './components/';
+
 
 @NgModule({
   declarations: [
     AppComponent,  
-    GoodsListComponent
+    GoodsListComponent, 
 ],
 imports: [
     HttpClientModule,
