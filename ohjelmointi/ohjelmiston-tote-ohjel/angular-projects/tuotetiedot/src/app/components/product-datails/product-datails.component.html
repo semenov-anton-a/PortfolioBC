@@ -1,0 +1,62 @@
+<div class="row" *ngIf="productData">
+    <h1 class="text-center mt-5">{{ productData.name }}</h1>
+
+    <div class="col-md-4 border">
+        <img src="assets/{{productData.images[0]}}" width="100%" />
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{ productData.additionalFeatures }}</li>
+            <li class="list-group-item">OS: {{productData.android.os}}, {{productData.android.ui}} </li>
+            <li class="list-group-item">Camera: {{productData.camera.primary}}: </li>
+            <li class="list-group-item">Display : {{productData.android.display?.screenResolution}}</li>
+            <li class="list-group-item">
+                Storage<br />Flash :{{productData.storage.flash}}
+                <br />Ram : {{productData.storage.ram}}
+            </li>
+        </ul>
+    </div>
+
+    <div class="col-md-8">
+        <p>{{productData.description}}</p>
+        <!-- <div class="col-md-12 d-flex">
+            <figure class="col-2" *ngFor="let img of productData.images">
+                <img src="assets/{{img}}" class="border" width="100%"/>
+            </figure>
+        </div> -->
+        <div class="row row-cols-2 row-cols-md-4 g-4">
+            <div class="col-2" *ngFor="let img of productData.images">
+                <div class="card">
+                    <img src="assets/{{img}}" width="10%" max-width="150px" class="card-img-top" alt="...">
+                </div>
+            </div>
+        </div>
+        <hr />
+        <div class="row">
+            <div class="col-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        Weight: {{ productData.sizeAndWeight.weight }}
+                    </li>
+                    <li class="list-group-item">Battery: <br/>
+                            <span>Stand by Time : {{productData.battery.talkTime}}</span><br/>
+                            <span>Tolking time : {{productData.battery.talkTime}}</span><br/>
+                            <span>Type : {{productData.battery.type}}</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-6">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"> 
+                        Size:<br/>
+                        <span *ngFor="let size of productData.sizeAndWeight.dimensions">{{size}}<br/></span>
+                    </li>
+                    <li class="list-group-item"> 
+                        Hardware :<br/>
+                        <span>CPU : {{productData.hardware.cpu}}</span><br/>
+                        <span>USB : {{productData.hardware.usb}}</span><br>
+                        <span>Audiojack : {{productData.hardware?.audiojack}}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

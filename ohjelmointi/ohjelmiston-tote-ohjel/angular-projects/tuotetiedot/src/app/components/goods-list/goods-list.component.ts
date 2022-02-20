@@ -10,29 +10,43 @@ import { ProductsService } from '../../services';
 
 export class GoodsListComponent implements OnInit {
 
-    private _findByRange : Array<number> = [ 0 , 3 ] ;
-    
+    private _findByRange : Array<number> = this._range(0,1) ;
+    inputFindByValue = "";
+
     selectOptions = [
         {   value : "select_all", 
             title : "All" },
         
         {   value : "select_olderByRange", 
-            title : `Older by ${this._findByRange[0]}-${this._findByRange[1]-1}` },
+            title : `Older by ${this._findByRange[0]}-${this._findByRange[1]}` },
         
         {   value : "select_others", 
             title : "Over 10 years old" }
     ];
 
+    
+    private _range( a:number, b:number ){
+        if( a <= 0 ) a = 0;
+        if( b <= 0 ) b = 0;
+        return [a,b]
+    };
 
-    productsList : any;
+    private productFullList : any = [];
+    productNewList : any = [];
 
     constructor(
         private productsService: ProductsService
     ) { }
 
     ngOnInit(): void {
-        this.select_all();
+        this.productsService.getAllProducts()
+            .subscribe( ( data : any ) => { 
+                this.productFullList = data;
+                this.productNewList = data; 
+            } );        
+        // this.select_all();
     }
+    
 
     searchByValue( value : any ){
         let methodName = value.target.value;
@@ -48,10 +62,7 @@ export class GoodsListComponent implements OnInit {
      * Get Others Products 
      */
     private select_others() {
-        this.productsService.getAllProducts()
-        .subscribe( ( data : any ) => { 
-            this.productsList = data.slice( 10 )
-        })
+        this.productNewList = this.productFullList.slice( 10 );
     }
 
     /**
@@ -59,18 +70,14 @@ export class GoodsListComponent implements OnInit {
      * @param _findByRange Array<number> [ 0 , 3 ]
      */
     private select_olderByRange( _findByRange : Array<number> ) {
-        this.productsService.getAllProducts()
-            .subscribe( ( data : any ) => { 
-                this.productsList = data.slice( this._findByRange[0], this._findByRange[1] )
-            })
+        this.productNewList = this.productFullList.slice( this._findByRange[0], this._findByRange[1] )
     }   
 
     /**
      * Get All Products
      */
     private select_all() {
-        this.productsService.getAllProducts()
-            .subscribe( ( data : any ) => { this.productsList = data } )
-    }
+        this.productNewList = this.productFullList;
+    }   
 
 }       

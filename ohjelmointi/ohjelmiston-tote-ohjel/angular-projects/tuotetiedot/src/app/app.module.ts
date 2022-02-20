@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
-
+import { PipefindByValue } from './pipes/PipefindByValue.pipe';
 import { AppComponent } from './app.component';
 import { 
-    GoodsListComponent,  
+    GoodsListComponent,
+    ProductDatailsComponent  
 } from './components/';
 
 
@@ -15,6 +16,8 @@ import {
   declarations: [
     AppComponent,  
     GoodsListComponent, 
+    PipefindByValue, 
+    ProductDatailsComponent
 ],
 imports: [
     HttpClientModule,
