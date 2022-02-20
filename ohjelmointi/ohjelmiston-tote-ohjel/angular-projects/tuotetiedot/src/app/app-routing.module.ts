@@ -5,8 +5,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductDatailsComponent, GoodsListComponent } from './components';
 
 const routes: Routes = [
-    { path: ':name', component: ProductDatailsComponent },
     { path: '', component: GoodsListComponent , pathMatch : "full" },
+    { path: 'p/:name', component: ProductDatailsComponent },
 ];
 
 @NgModule({
